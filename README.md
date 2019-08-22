@@ -17,13 +17,14 @@ So, what is Quorten's BPC?  It is my version of a general-purpose
 computer system that is small enough and simple enough to be built by
 hand, ideally by only one person.  Once the bootstrap PC has been
 built by hand, its goal is to be the shortest and fastest possible
-path to build up more complicated software to reach the modern
-software-heavy computing era.  Unlike many other modernizations of
-vintage computer projects, the purpose of this project is **not** to
-be a replica copy of a historic computer system.  Rather, it is meant
-to be a useful modern computer platform in its own right, and
-therefore strives to be more "culturally modern" when doing so does
-not compromise on implementation simplicity.
+path to build up more complicated hardware, software, and
+telecommunications to reach the modern heavy-duty computing era.
+Unlike many other modernizations of vintage computer projects, the
+purpose of this project is **not** to be a replica copy of a historic
+computer system.  Rather, it is meant to be a useful modern computer
+platform in its own right, and therefore strives to be more
+"culturally modern" when doing so does not compromise on
+implementation simplicity.
 
 Besides a useful implementation of low-level software, a hardware
 reference design is also provided, for the sake of being disambiguous.
