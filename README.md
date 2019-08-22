@@ -48,3 +48,10 @@ the pertinent code.  Originally it was developed for application use,
 but upon second look, I saw I could reorganize it to create a useful
 general-purpose operating system and electronic hardware design
 automation platform.
+
+License
+-------
+
+License?  No license, public domain, that is the goal.  The UNLICENSE
+fills in the required legalese for jurisdictions that don't recognize
+the concept of a public domain.
