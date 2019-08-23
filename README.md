@@ -27,7 +27,7 @@ platform in its own right, and therefore strives to be more
 implementation simplicity.
 
 Besides a useful implementation of low-level software, a hardware
-reference design is also provided, for the sake of being disambiguous.
+reference design is also provided, for the sake of being unambiguous.
 The following real-world (a.k.a. "historic") CPU architectures are
 also either supported or planned to be supported.
 
@@ -49,9 +49,55 @@ but upon second look, I saw I could reorganize it to create a useful
 general-purpose operating system and electronic hardware design
 automation platform.
 
+Documentation
+-------------
+
+Documentation is the bread and butter of this project!  Good
+documentation has historically been pretty closely correlated with the
+success of any computing platform.  I have several blog articles
+written up on this subject, and I will be editing and merging them
+down into more of a Wiki or book format.  The documentation will be
+included in this repository alongside with the code that implements
+the usable Bootstrap Personal Computer.
+
+However, this brings forward a good question.  Indeed, that is true,
+offered in the college curriculum of electrical and computer engineers
+is a class to design a microcontroller entirely via schematic means,
+essentially the modern analog of a hand-designed, hand-built CPU.
+Write in Verilog.  For synthesizable hardware on an FPGA.
+
+thousands of students have taken that class, surely something useful
+would have come out of one of their ilk?
+
+That is true, but here is the crux of the issue.  Many people have
+designed independently useful such tools in the public domain, but I
+believe no one has had a concerted effort to integrate it all together
+really nicely.  That is the gap that this project hopes to fill in.
+
+Finally, an important point is long-term maintenance.  This is perhaps
+what makes this lucky that I pulled this out of useful application
+software of my own.  Because I plan on using it for quite a while,
+hopefully this project of its own will have a longer term maintenance
+cycle than the ones that came before it.  I love the ideas behind C--
+and Microsoft Research's "software MMU" programming language runtime,
+but those projects ultimately failed in the long run due to their
+substantiated backing in research funding and failure to gain a
+foothold in a larger product.  Secure foothold in a small application
+product, is based off of already well-established standards, and
+should therefore be interchangable to also be functional lower level
+component of other small applications too.  We're not trying
+to build a new standard, but rather.
+
 License
 -------
 
 License?  No license, public domain, that is the goal.  The UNLICENSE
 fills in the required legalese for jurisdictions that don't recognize
 the concept of a public domain.
+
+Thanks
+------
+
+In addition to direct contributors, many people have had major
+influences on the concepts and implementations in Quorten's BPC.  See
+THANKS.md for a list.
