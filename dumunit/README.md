@@ -72,4 +72,13 @@ Host:TxDL:123
 Host:<here follows data, and a newline after it>
 ```
 
+Okay, one last extension, for the sake of programmer friendliness.
+Optionally, you can specify the data format in hex byte codes too.
+
+```
+DFMT:Bin
+DFMT:Hex
+00 01 02 03 04 1a 2a 3a 4b ...
+```
+
 That's all you need to know.
