@@ -60,33 +60,24 @@ down into more of a Wiki or book format.  The documentation will be
 included in this repository alongside with the code that implements
 the usable Bootstrap Personal Computer.
 
-However, this brings forward a good question.  Indeed, that is true,
-offered in the college curriculum of electrical and computer engineers
-is a class to design a microcontroller entirely via schematic means,
-essentially the modern analog of a hand-designed, hand-built CPU.
-Write in Verilog.  For synthesizable hardware on an FPGA.
-
-thousands of students have taken that class, surely something useful
-would have come out of one of their ilk?
-
-That is true, but here is the crux of the issue.  Many people have
-designed independently useful such tools in the public domain, but I
-believe no one has had a concerted effort to integrate it all together
-really nicely.  That is the gap that this project hopes to fill in.
+Maintenance?
+------------
 
 Finally, an important point is long-term maintenance.  This is perhaps
 what makes this lucky that I pulled this out of useful application
-software of my own.  Because I plan on using it for quite a while,
-hopefully this project of its own will have a longer term maintenance
-cycle than the ones that came before it.  I love the ideas behind C--
-and Microsoft Research's "software MMU" programming language runtime,
-but those projects ultimately failed in the long run due to their
-substantiated backing in research funding and failure to gain a
-foothold in a larger product.  Secure foothold in a small application
-product, is based off of already well-established standards, and
-should therefore be interchangable to also be functional lower level
-component of other small applications too.  We're not trying
-to build a new standard, but rather.
+software of my own.  Because I plan on using the related software for
+quite a while, hopefully this project of its own will have a longer
+term maintenance cycle than the ones that came before it.  I love the
+ideas behind C-- and Microsoft Research's "software MMU" programming
+language runtime, but those projects ultimately failed in the long run
+due to their substantiated backing in research funding and failure to
+gain a foothold in useful application software.  This project has a
+secure foothold in a small application product, is based off of
+already well-established standards, and should therefore be
+interchangable to also be functional lower level component of other
+small applications too.  We're not trying to build a new standard, but
+rather a hopefully more future-resistant small scale implementation of
+widely adopted ones.
 
 License
 -------
