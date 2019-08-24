@@ -66,7 +66,7 @@ encapsulation or similar.  However, if you would like a standard input
 and standard output communication channel without implementing a full
 SLIP stack, then a simple protocol extension allows a test harness to
 feed in the test data upon request.  Request data length and response
-data length are the keys.
+data length in bytes are the keys.
 
 ```
 Target:RxDL:Any

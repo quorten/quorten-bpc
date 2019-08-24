@@ -34,8 +34,8 @@ Thanks to influencers
   user-friendly front panel control switch.
 
 * Dennis Allison for publishing Tiny BASIC in the 1976, the popular
-  counterpart to the proprietary MICROSOFT BASIC that was more in the
-  vein of free, libre, and open-source software.
+  counterpart to the proprietary MICROSOFT BASIC that coined the term
+  copyleft in the vein of free, libre, and open-source software.
 
 * Steve Wozniak, Steve Jobs, et al. of Apple Computer for
   commercializing the Apple II in 1977, the 8-bit home computer that
@@ -48,7 +48,7 @@ Thanks to influencers
 
 * Brian Kerningham, Dennis Ritchie, et al. for publishing the C
   programming language in 1978, the mother of all modern programming
-  language.
+  languages.
 
 * Tim Patterson et al. of Seattle Computer Products for
   commercializing QDOS and QDOS DEBUG in 1980, the progenitors of
@@ -77,6 +77,16 @@ Thanks to influencers
   was extremely instrumental in setting up vintage Apple II computers
   in the modern era.
 
+* Randall Byrant and David O'Hallaron for publishing _Computer
+  Systems: A Programmer's Perspective, 2nd edition_ in 2011, for my
+  comment of the issue of designing a CPU solely for college classes.
+  Without exposure to their book, I would not have recognized the
+  elephant in the room.
+
+* David Patterson and Jonhn Hennessy for publishing the book _Computer
+  Architecture: A Quantitative Approach, 5th edition_ in 2012, which
+  influenced the CPU hardware design considerations.
+
 * Lee Hart for publishing a COSMAC ELF clone in 2012.
 
 * Eben Upton et al. of Raspberry Pi Foundation in 2013 for
@@ -84,15 +94,6 @@ Thanks to influencers
 
 * Stephen Cass for publishing an article on Lee Hart's COSMAC ELF
   clone in IEEE Spectrum in 2015 for moderners.
-
-* Randall Byrant and David O'Hallaron for _Computer Systems: A
-  Programmer's Perspective, 2nd edition_, for my comment of the issue
-  of designing a CPU solely for college classes.  Without exposure to
-  their book, I would not have recognized the elephant in the room.
-
-* David Patterson and Jonhn Hennessy for publishing the book _Computer
-  Architecture: A Quantitative Approach, 5th edition_ in 2012, which
-  influenced the CPU hardware design considerations.
 
 * And countless others who have influenced these influencers but have
   not been mentioned here for the sake of brevity!
