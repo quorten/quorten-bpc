@@ -30,9 +30,9 @@ test_dumunit1$(X): test_dumunit1.o dumunit.o
 test_dumunit2$(X): test_dumunit2.o dumunit.o
 	$(LD) $(LDFLAGS) -o $@ $^
 
-check test: test_dumunit1$(X) test_dumunit2$(X)
-	./test_dumunit1$(X)
-	-./test_dumunit2$(X)
+check test: dumunit_runner$(X) test_dumunit1$(X) test_dumunit2$(X)
+	-./dumunit_runner$(X) ./test_dumunit1$(X)
+	-./dumunit_runner$(X) ./test_dumunit2$(X)
 
 mostlyclean:
 	rm -f dumunit_runner.o test_dumunit1.o test_dumunit2.o
