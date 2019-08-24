@@ -50,7 +50,9 @@ End_Of_Tests
 
 Note that it is also possible to embed the test summary user interface
 into the target image and display that output in addition to, or in
-place of, the primary test results output.
+place of, the primary test results output.  However, if you do this,
+and there is memory corruption during a failed test, the summary
+mechanism might fail.
 
 The basic case of unit testing implies a "self-test" where all
 necessary test data is embedded within the firmware image itself,
