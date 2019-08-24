@@ -1,9 +1,11 @@
 /* dumunit.c -- Another simple unit testing framework for embedded
    systems.
 
-   Public Domain 2019 Andrew Makousky
+Public Domain 2019 Andrew Makousky
 
-   See UNLICENSE file for un-license details.  */
+See the file "UNLICENSE" in the top level directory for details.
+
+*/
 
 #include <stdio.h>
 #include <stdlib.h>

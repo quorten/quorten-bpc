@@ -1,9 +1,11 @@
 /* test_dumunit1.c -- Perform all tests on `dumunit' that do not crash
    the system.
 
-   Public Domain 2019 Andrew Makousky
+Public Domain 2019 Andrew Makousky
 
-   See UNLICENSE file for un-license details.  */
+See the file "UNLICENSE" in the top level directory for details.
+
+*/
 
 #include "dumunit.h"
 
