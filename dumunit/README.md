@@ -11,6 +11,7 @@ connection.
 This is the format of the output.
 
 ```
+
 Start_Of_Tests
 
 Test:strcmp_eq_pass
@@ -30,7 +31,7 @@ Result:Fail
 ...
 
 Exception:Divide_By_Zero
-Status:Terminate_Test
+Status:Abort_Test
 
 ...
 
@@ -93,4 +94,17 @@ DFMT:Hex
 00 01 02 03 04 1a 2a 3a 4b ...
 ```
 
-That's all you need to know.
+----------
+
+Example on using `dumunit` for writing unit tests...
+
+----------
+
+Please note that `dumunit` is not unique.  Here is a list of other
+similar and inspirational C unit testing frameworks, including some
+for embedded systems.
+
+20171120/DuckDuckGo unit testing c  
+20171120/https://stackoverflow.com/questions/65820/unit-testing-c-code#65845  
+20171120/http://check.sourceforge.net/doc/check_html/check_2.html#SEC3
+
