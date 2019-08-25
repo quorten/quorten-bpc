@@ -25,6 +25,9 @@ typedef int (*DUTestCode)(void);
 #define DUM_ASSERT(message, test_value) \
   du_assert (__FILE__ ":" DUM_TOSTRING(__LINE__) ":" message, (test_value))
 
+#define DUMA_ASSERT(test_value) \
+  DUM_ASSERT("expected " DUM_STRINGIFY(test_value), (test_value))
+
 #define DUM_RUN_TEST(test_code) \
   du_run_test (#test_code, (DUTestCode) test_code)
 

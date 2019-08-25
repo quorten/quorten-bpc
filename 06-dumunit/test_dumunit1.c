@@ -16,9 +16,21 @@ test_assert_pass (void)
 }
 
 int
+test_assert_lazy_pass (void)
+{
+  return DUMA_ASSERT(3 > 2);
+}
+
+int
 test_assert_fail (void)
 {
   return DUM_ASSERT("expected 1 == 0", 1 == 0);
+}
+
+int
+test_assert_lazy_fail (void)
+{
+  return DUMA_ASSERT(2 > 3);
 }
 
 int
@@ -40,7 +52,9 @@ void
 suite_test_dumunit1 (void)
 {
   DUM_RUN_TEST(test_assert_pass);
+  DUM_RUN_TEST(test_assert_lazy_pass);
   DUM_RUN_TEST(test_assert_fail);
+  DUM_RUN_TEST(test_assert_lazy_fail);
   DUM_RUN_TEST(test_assert_div0);
   DUM_RUN_TEST(test_assert_info);
 }

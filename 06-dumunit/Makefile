@@ -2,32 +2,33 @@ CC = cc
 CFLAGS =
 LD = cc
 LDFLAGS =
+O = .o
 X =
 
-TARGETS = dumunit.o du-reporter$(X) test_dumunit1$(X) test_dumunit2$(X)
+TARGETS = dumunit$(O) du-reporter$(X) test_dumunit1$(X) test_dumunit2$(X)
 
 all: $(TARGETS)
 
-dumunit.o: dumunit.c dumunit.h
+dumunit$(O): dumunit.c dumunit.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-du-reporter.o: du-reporter.c \
+du-reporter$(O): du-reporter.c \
 	../05-algos2/exparray.h ../05-algos2/xmalloc.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-test_dumunit1.o: test_dumunit1.c dumunit.h
+test_dumunit1$(O): test_dumunit1.c dumunit.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-test_dumunit2.o: test_dumunit2.c dumunit.h
+test_dumunit2$(O): test_dumunit2.c dumunit.h
 	$(CC) $(CFLAGS) -o $@ -c $<
 
-du-reporter$(X): du-reporter.o ../05-algos2/xmalloc.c
+du-reporter$(X): du-reporter$(O) ../05-algos2/xmalloc.c
 	$(LD) $(LDFLAGS) -o $@ $^
 
-test_dumunit1$(X): test_dumunit1.o dumunit.o
+test_dumunit1$(X): test_dumunit1$(O) dumunit$(O)
 	$(LD) $(LDFLAGS) -o $@ $^
 
-test_dumunit2$(X): test_dumunit2.o dumunit.o
+test_dumunit2$(X): test_dumunit2$(O) dumunit$(O)
 	$(LD) $(LDFLAGS) -o $@ $^
 
 check test: du-reporter$(X) test_dumunit1$(X) test_dumunit2$(X)
@@ -35,7 +36,7 @@ check test: du-reporter$(X) test_dumunit1$(X) test_dumunit2$(X)
 	-./du-reporter$(X) ./test_dumunit2$(X)
 
 mostlyclean:
-	rm -f du-reporter.o test_dumunit1.o test_dumunit2.o
+	rm -f du-reporter$(O) test_dumunit1$(O) test_dumunit2$(O)
 
 clean: mostlyclean
 	rm -f $(TARGETS)
