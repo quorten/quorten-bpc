@@ -1,3 +1,6 @@
+`dumunit`
+=========
+
 This is a dumb unit testing framework for C software.  Actually, the
 high-level design is programming language independent.  The primary
 function of this unit testing framework is to allow a standard means
@@ -7,6 +10,9 @@ This is so that it's possible to generate and load a unit test
 firmware image onto your embedded target machine, execute them, send
 the results back to the host over a UART serial communications
 connection.
+
+Communication Specification
+---------------------------
 
 This is the format of the output.
 
@@ -94,11 +100,117 @@ DFMT:Hex
 00 01 02 03 04 1a 2a 3a 4b ...
 ```
 
-----------
+----------------------------------------
 
-Example on using `dumunit` for writing unit tests...
+How to use `dumunit`
+--------------------
 
-----------
+`dumunit`, as its name implies, is simple and easy to use.  An
+individual test case is typically written like this:
+
+```
+int
+test_my_code (void)
+{
+  /* Do stuff.  */
+  return DUM_ASSERT("expected result != 3", result != 3);
+}
+```
+
+If you are performing multiple asserts in one test case, you write the
+code like this:
+
+```
+int
+test_my_code (void)
+{
+  int retval = 1;
+  /* Do stuff.  */
+  retval &= DUM_ASSERT("expected result != 3", result != 3);
+  /* Possible do more stuff.  */
+  retval &= DUM_ASSERT("expected result < 10", result < 10);
+  return retval;
+}
+```
+
+Note that if we want all asserts to be run (as intended in the
+example), we use bit-wise AND since logical AND implements
+short-circuit logic.
+
+As a useful convention, multiple test cases are rolled up into a test
+suite like this:
+
+```
+void
+suite_test_dumunit1 (void)
+{
+  DUM_RUN_TEST(test_assert_pass);
+  DUM_RUN_TEST(test_assert_fail);
+  DUM_RUN_TEST(test_assert_div0);
+  DUM_RUN_TEST(test_assert_info);
+}
+```
+
+You can then write a main function that calls the suite from a
+different source code file:
+
+```
+int
+main (void)
+{
+  du_start_all_tests ();
+  suite_test_dumunit1 ();
+  du_end_all_tests ();
+  return 0;
+}
+```
+
+Or, you can then write additional suite functions to call sub-suites,
+and link it all together into a single suite executor that runs all
+suites.
+
+Please note that due to the embedded system emphasis, the return value
+of the suite executor is beyond the scope of the test system, which is
+why we always return zero.  Also, note that for the sake of embedded
+system testing, you can have additional setup code in the executor to
+start a remote embedded system and redirect standard input and
+standard output accordingly.
+
+Once you have the executor compiled, you can run it from the reporter
+like this:
+
+```
+du_reporter <EXECUTOR-NAME>
+```
+
+This will generate a nice Python `unittest` style report that looks
+like this:
+
+```
+Running tests .FE.
+
+============================== FAILURES ==============================
+
+Test:test_assert_fail
+Assert_Fail:test_dumunit1.c:21:expected 1 == 0
+
+============================= EXCEPTIONS =============================
+
+Test:test_assert_div0
+Exception:Floating point exception
+Status:Abort_Test
+
+================================ Info ================================
+
+Test:test_assert_info
+Info:Testing debug info message.
+
+======================================================================
+
+Summary: 4 run, 2 passed, 1 failed, 1 exceptions
+```
+
+----------------------------------------
 
 Please note that `dumunit` is not unique.  Here is a list of other
 similar and inspirational C unit testing frameworks, including some

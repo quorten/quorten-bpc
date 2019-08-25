@@ -114,7 +114,8 @@ du_sig_handler (int signum)
   int status = DU_E_ABORT_TEST;
   if (signum == SIGINT ||
       signum == SIGSEGV ||
-      signum == SIGBUS)
+      signum == SIGBUS ||
+      signum == SIGILL)
     status = DU_E_FATAL;
   du_exception (except_name, status);
 }
@@ -130,6 +131,7 @@ du_init_sigs (void)
   sigaction (SIGINT, &sa, NULL);
   sigaction (SIGSEGV, &sa, NULL);
   sigaction (SIGBUS, &sa, NULL);
+  sigaction (SIGILL, &sa, NULL);
 }
 
 /********************************************************************/

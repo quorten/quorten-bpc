@@ -1,4 +1,4 @@
-/* dumunit_runner.c -- Run a `dumunit' test suite, analyze, and report
+/* du_reporter.c -- Run a `dumunit' test suite, analyze, and report
    the results in a user-friendly format.
 
 Public Domain 2019 Andrew Makousky
@@ -170,6 +170,12 @@ main (int argc, char *argv[])
   "\n================================ Info ================================\n",
            stdout);
     fputs (info_text.d, stdout);
+  }
+  if (tests_failed > 0 || tests_except > 0 || tests_info > 0) {
+    /* Show a nice big divider before the final summary.  */
+    fputs (
+  "\n======================================================================\n",
+           stdout);
   }
 
   /* Print the final test results summary.  */
