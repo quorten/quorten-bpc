@@ -183,8 +183,8 @@ like this:
 du_reporter <EXECUTOR-NAME>
 ```
 
-This will generate a nice Python `unittest` style report that looks
-like this:
+This will generate a nice Python `unittest`/`pytest` style report that
+looks like this:
 
 ```
 Running tests .FE.
