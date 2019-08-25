@@ -1,4 +1,4 @@
-/* du_reporter.c -- Run a `dumunit' test suite, analyze, and report
+/* du-reporter.c -- Run a `dumunit' test suite, analyze, and report
    the results in a user-friendly format.
 
 Public Domain 2019 Andrew Makousky
