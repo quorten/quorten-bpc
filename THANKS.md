@@ -6,6 +6,10 @@ Thanks to contributors
 Thanks to influencers
 ---------------------
 
+* Douglas Engelbart et al. for the "Mother of All Demos" in 1968, for
+  showing a truly remarkable way to demonstrate the features and
+  functions of an advanced computer system.
+
 * Ken Thompson et al. for developing and publishing Unix in 1973, the
   operating system that has become the foothold of the world.
 
