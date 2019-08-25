@@ -75,9 +75,11 @@ gain a foothold in useful application software.  This project has a
 secure foothold in a small application product, is based off of
 already well-established standards, and should therefore be
 interchangable to also be functional lower level component of other
-small applications too.  We're not trying to build a new standard, but
-rather a hopefully more future-resistant small scale implementation of
-widely adopted ones.
+small applications too.  Go ahead, check the provenance of
+`exparray.h`, and see how many years it has been used in actively
+maintained software projects.  We're not trying to build a new
+standard, but rather a hopefully more future-resistant small scale
+implementation of widely adopted ones.
 
 License
 -------
