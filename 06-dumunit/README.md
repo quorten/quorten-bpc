@@ -180,7 +180,7 @@ Once you have the executor compiled, you can run it from the reporter
 like this:
 
 ```
-du_reporter <EXECUTOR-NAME>
+du-reporter <EXECUTOR-NAME>
 ```
 
 This will generate a nice Python `unittest`/`pytest` style report that
