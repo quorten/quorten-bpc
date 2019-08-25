@@ -86,8 +86,7 @@ License?  No license, public domain, that is the goal.  The UNLICENSE
 fills in the required legalese for jurisdictions that don't recognize
 the concept of a public domain.
 
-Why public domain?
-..................
+### Why public domain?
 
 Well, if you're looking for similar free, libre, open-source projects,
 chances are you can find one under every other such license: GPLv2,
