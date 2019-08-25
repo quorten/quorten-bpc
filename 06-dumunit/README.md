@@ -212,6 +212,9 @@ Summary: 4 run, 2 passed, 1 failed, 1 exceptions
 
 ----------------------------------------
 
+Footnotes
+---------
+
 Please note that `dumunit` is not unique.  Here is a list of other
 similar and inspirational C unit testing frameworks, including some
 for embedded systems.
