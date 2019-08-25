@@ -127,7 +127,7 @@ test_my_code (void)
   int retval = 1;
   /* Do stuff.  */
   retval &= DUM_ASSERT("expected result != 3", result != 3);
-  /* Possible do more stuff.  */
+  /* Possibly do more stuff.  */
   retval &= DUM_ASSERT("expected result < 10", result < 10);
   return retval;
 }
