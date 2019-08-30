@@ -158,17 +158,61 @@ du_hdr_write (unsigned long size)
 int
 du_hex_read (void *buffer, unsigned long count)
 {
+  unsigned char *curbuf = (unsigned char *) buffer;
+  while (count > 0) {
+    int rchar;
+    if (fscanf (du_test_in, " %02x", &rchar) != 1)
+      return -1;
+    *curbuf = (unsigned char) rchar;
+    curbuf++;
+    count--;
+  }
+  if (getc (du_test_in) != '\n')
+    return -1;
+  return count;
 }
 
 int
 du_hex_write (void *buffer, unsigned long count)
 {
+  unsigned char *curbuf = (unsigned char *) buffer;
+  if (fputs ("DFMT:Hex\n", du_test_out) == EOF)
+    return -1;
+  while (count > 0) {
+    if (fprintf (du_test_out, " %02x", *curbuf) < 0)
+      return -1;
+    curbuf++;
+    count--;
+  }
+  if (putc ('\n', du_test_out) == EOF)
+    return -1;
+  return count;
 }
 
 /* Read in-band data, independent of encoding.  */
 int
 du_inb_read (void *buffer, unsigned long count)
 {
+  char linebuf[256];
+  int read_count;
+  int is_hex;
+  while (1) { /* while (read_hdrs) */
+    fgets (linebuf, 256, du_test_in);
+    if (!strncmp (linebuf, "TxDL:", 5)) {
+      sscanf (linebuf, "TxDL:%d\n", read_count);
+    } else if (!strncmp (linebuf, "DFMT:Bin", 5)) {
+      is_hex = 0;
+    } else if (!strncmp (linebuf, "DFMT:Hex", 5)) {
+      is_hex = 1;
+    } else {
+      /* Start reading the first few bytes fetched in the line
+	 buffer.  */
+      /* Done reading headers.  */
+      break;
+    }
+  }
+  /* Read the remainder of the data.  */
+  /* TODO */
 }
 
 /* Write in-band data.  The `hex' flag indicates whether hexadecimal
@@ -176,4 +220,17 @@ du_inb_read (void *buffer, unsigned long count)
 int
 du_inb_write (int hex, void *buffer, unsigned long count)
 {
+  if (fprintf (du_test_out, "TxDL:%d\n", count) < 0)
+    return -1;
+  if (!hex) {
+    if (fputs ("DFMT:Bin\n", du_test_out) == EOF)
+      return -1;
+    if (fwrite (buffer, count, 1, du_test_out) != 1)
+      return -1;
+    if (putc ('\n', du_test_out) == EOF)
+      return -1;
+  } else {
+    du_hex_write (buffer, count);
+  }
+  return count;
 }
