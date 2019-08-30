@@ -245,12 +245,13 @@ that the software performs its intended task correctly.  This entails
 providing a well-defined, programming language independent API by
 which the code can be executed.  The evaluation of results and
 determination of "pass" or "fail" is then carried out by the external
-test runner.  Programming language independence especially helps to
-reduce the amount of trusted test code that must be written, if the
-same software is to be re-implemented across many different
-programming languages.  An external test evaluator alone does not
-completely protect against test fraud due to the aforementioned
-possible use of a "defeat device."
+test runner.  `dumunit` does provide such a means through its
+bi-directional in-band communication mechanisms.  Programming language
+independence especially helps to reduce the amount of trusted test
+code that must be written, if the same software is to be
+re-implemented across many different programming languages.  An
+external test evaluator alone does not completely protect against test
+fraud due to the aforementioned possible use of a "defeat device."
 
 The final defense against test fraud hinges around code coverage
 analysis.  Unit testing, unlike integration testing, requires some
