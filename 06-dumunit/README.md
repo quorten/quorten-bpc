@@ -224,6 +224,59 @@ Summary: 4 run, 2 passed, 1 failed, 1 exceptions
 
 ----------------------------------------
 
+Tips on Preventing Test Fraud
+-----------------------------
+
+Test fraud has a long history of repeated incidents in the automotive
+industry, and likewise it has been joked about in software packages of
+the names `volkswagen` and the like.  The term coined for test fraud
+in the automotive industry is "defeat device." In the software world,
+although test fraud is unheard of in small one-person hobby software
+projects, it is not uncommon for it to happen in paid software
+projects with hired help.  Ultimately, combating test fraud is a
+battle of arms, but nevertheless, `dumunit` does provide a means of
+defense against test fraud if a few design details and assumptions are
+met.  First of all, all tests in the style of a "self-test" cannot, by
+definition, be protected from test fraud.
+
+One key component of protection from test fraud is some external,
+trusted code base that can be relied on to carry out the evaluation
+that the software performs its intended task correctly.  This entails
+providing a well-defined, programming language independent API by
+which the code can be executed.  The evaluation of results and
+determination of "pass" or "fail" is then carried out by the external
+test runner.  Programming language independence especially helps to
+reduce the amount of trusted test code that must be written, if the
+same software is to be re-implemented across many different
+programming languages.  An external test evaluator alone does not
+completely protect against test fraud due to the aforementioned
+possible use of a "defeat device."
+
+The final defense against test fraud hinges around code coverage
+analysis.  Unit testing, unlike integration testing, requires some
+additional code to be written to implement the unit test cases, some
+of which may never happen in production code.  The key here is to not
+rely solely on unit testing for testing your software: there must also
+be a rigorous integration test suite.  Both test suites must produce
+code coverage reports that you can analyze.  There are two main code
+coverage patterns of a dishonest test: (1) failing to run any code
+outside the unit test code and (2) running extra code that modifies
+the results compared to the integration test observations.
+Ultimately, unit test code should be as small and as similar to
+production code as possible.
+
+Please note that code coverage analysis in its own right is not a
+foolproof method of comprehensively covering a code's behavior.  If
+the code implements any interpreter engine, the actual behavior of the
+code is dependent on the source data of the interpreter, which must be
+also comprehensively tested.
+
+Good software tests are a means of resistance to security
+vulnerabilities, but if your tests are dishonest, everything goes
+downhill from there.
+
+----------------------------------------
+
 Footnotes
 ---------
 
