@@ -78,6 +78,14 @@ Thanks to influencers
   IBM PS/2 in 1987, the IBM PC that was small, simple, and showcased a
   relatively wide range of useful hardware peripherals.
 
+* Shawn Hargreaves et al. of the Allegro Low-Level Game Library
+  development team, for publishing a source-available multimedia
+  programming library that was a significant inspiration for me to
+  pursue development of my own basic framebuffer graphics library.
+  The inspiration, that it is possible for a single person to create a
+  graphics library with enough features to be reasonably useful for
+  practical software.
+
 * Microsoft Winodws development team of Microsoft for commercializing
   Windows (3.1) API in 1992, a good design evolution of a GUI API that
   was strongly influenced by the Macintosh computer.
