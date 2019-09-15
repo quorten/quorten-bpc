@@ -68,12 +68,6 @@ Thanks to influencers
   in 1984, a major influence on modern graphical user interfaces and
   small computer GUI APIs.
 
-* Richard Stallman et al. of the GNU Project for announcing,
-  organizing, and starting development on the GNU Project in 1984,
-  when it was not yet clear that anything significant beyond GNU Emacs
-  would come out of it.  For those who desire the will to succeed for
-  doing something great in its own right.
-
 * IBM PS/2 development team of IBM for developing/commercializing the
   IBM PS/2 in 1987, the IBM PC that was small, simple, and showcased a
   relatively wide range of useful hardware peripherals.
